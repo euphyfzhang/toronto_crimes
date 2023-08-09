@@ -18,4 +18,4 @@ streamlit.header('Toronto Crimes - Major Crimes Indicator')
 
 mci_response = requests.get("https://services.arcgis.com/S9th0jAJ7bqgIRjw/arcgis/rest/services/Major_Crime_Indicators_Open_Data/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
 mci_json = pandas.json_normalize(mci_response.json())
-streamlit.dataframe(mci_json['features'])
+streamlit.dataframe(mci_json['features'][0])
